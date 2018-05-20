@@ -11,3 +11,8 @@ import scholarly
 def checkmilo(nama):
     return next(scholarly.search_author('Rodriguez')).fill()
     #print(nama)
+
+import scholarly
+def kampret(nama):
+    return next(scholarly.search_author('Hamdani')).fill()
+    #print(nama)
