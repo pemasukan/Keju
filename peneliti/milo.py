@@ -6,3 +6,8 @@ def cari(nama):
 import scholarly
 def coba(nama):
     return next(scholarly.search_author(nama)).fill()
+
+import scholarly
+def checkmilo(nama):
+    return next(scholarly.search_author('Rodriguez')).fill()
+    #print(nama)

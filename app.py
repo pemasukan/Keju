@@ -1,5 +1,5 @@
 from flask import Flask,request,Response,jsonify
-from peneliti import milo as ml, ml
+from peneliti import milo as ml, ml, mlo
 import scholarly,json
 
 app = Flask(__name__)
@@ -25,4 +25,9 @@ def apaajalah(nama):
 @app.route('peneliti/<nama>')
 def coba2(nama):
     data = ml.coba(nama)
+    return jsonify(data)
+
+@app.route('/peneliti/<nama>')
+def cobaapp(nama):
+    data = mlo.checkmilo(nama)
     return jsonify(data)
