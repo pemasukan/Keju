@@ -1,5 +1,5 @@
 from flask import Flask,request,Response,jsonify
-from peneliti import milo as ml, ml, mlo, mls
+from peneliti import milo as ml
 import scholarly,json
 
 app = Flask(__name__)
@@ -17,22 +17,6 @@ def show_post(post_id):
 def login():
 	return request.form['anu']
 
-@app.route('/peneliti/<nama>')
+@app.route('/peneliti/<nama>', methods=['POST'])
 def apaajalah(nama):
-    data = ml.cari(nama)
-    return jsonify(data)
-
-@app.route('peneliti/<nama>')
-def coba2(nama):
-    data = ml.coba(nama)
-    return jsonify(data)
-
-@app.route('/peneliti/<nama>')
-def cobaapp(nama):
-    data = mlo.checkmilo(nama)
-    return jsonify(data)
-
-@app.route('/peneliti/<nama>')
-def sembarang(nama):
-    data = mls.kampret(nama)
-    return jsonify(data)
+    return str(ml.cari(nama))
