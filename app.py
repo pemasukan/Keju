@@ -1,8 +1,13 @@
-from flask import Flask,request,Response,jsonify
+from flask import Flask,request,jsonify
 from peneliti import milo as ml
 import scholarly,json
+from flask_mysqldb import MySQL
+import pymysql
+
+db = pymysql.connect("localhost", "root", "", "latihan")
 
 app = Flask(__name__)
+mysql = MySQL(app)
 
 @app.route('/<gurih>')
 def hello_world(gurih):
@@ -19,4 +24,5 @@ def login():
 
 @app.route('/peneliti/<nama>', methods=['GET'])
 def apaajalah(nama):
-    return str(ml.cari(nama))
+    search_query = scholarly.search_author(nama)
+    return str(next(search_query))
