@@ -17,6 +17,6 @@ def show_post(post_id):
 def login():
 	return request.form['anu']
 
-@app.route('/peneliti/<nama>', methods=['POST'])
+@app.route('/peneliti/<nama>', methods=['GET'])
 def apaajalah(nama):
     return str(ml.cari(nama))
