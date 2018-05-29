@@ -4,7 +4,7 @@ import scholarly,json
 from flask_mysqldb import MySQL
 import pymysql
 
-db = pymysql.connect("localhost", "root", "", "latihan")
+db = pymysql.connect("localhost", "root", "", "author")
 
 app = Flask(__name__)
 mysql = MySQL(app)
@@ -26,3 +26,11 @@ def login():
 def apaajalah(nama):
     search_query = scholarly.search_author(nama)
     return str(next(search_query))
+
+@app.route('/aut')
+def hehe():
+    cursor = db.cursor()
+    sql = "SELECT * FROM service"
+    cursor.execute(sql)
+    results = cursor.fetchall()
+    return str(results)
