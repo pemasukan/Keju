@@ -33,5 +33,4 @@ def hehe():
     sql = "SELECT * FROM service"
     cursor.execute(sql)
     results = cursor.fetchall()
-    return str(results)
-    
+    return str(results)    
