@@ -33,6 +33,12 @@ def hehe():
     sql = "SELECT * FROM service"
     cursor.execute(sql)
     results = cursor.fetchall()
-    return str(results)    
+    return str(results)
 
-
+@app.route('/cobaan')
+def cobain():
+   cursor = db.cursor()
+   sql = "SELECT * FROM service WHERE id=180"
+   cursor.execute(sql)
+   results = cursor.fetchall()
+   return jsonify(results)    
