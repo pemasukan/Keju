@@ -41,4 +41,11 @@ def cobain():
    sql = "SELECT * FROM service WHERE id=180"
    cursor.execute(sql)
    results = cursor.fetchall()
+<<<<<<< HEAD
    return jsonify(results)
+=======
+   return jsonify(results)
+   
+      
+      
+>>>>>>> bc750c28c6979803f182e1801279b229c1698e68
