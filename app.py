@@ -1,7 +1,8 @@
 from flask import Flask,request,jsonify
 from peneliti import milo as ml
-import scholarly,json
+from peneliti import alone
 from flask_mysqldb import MySQL
+import scholarly,json
 import pymysql
 
 db = pymysql.connect("localhost", "root", "", "author")
@@ -41,11 +42,7 @@ def cobain():
    sql = "SELECT * FROM service WHERE id=180"
    cursor.execute(sql)
    results = cursor.fetchall()
-<<<<<<< HEAD
-   return jsonify(results)
-=======
-   return jsonify(results)
-   
-      
-      
->>>>>>> bc750c28c6979803f182e1801279b229c1698e68
+
+@app.route('/yok')
+def halah():
+    print(alone.barbel)
