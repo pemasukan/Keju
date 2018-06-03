@@ -46,3 +46,4 @@ def cobain():
 @app.route('/yok')
 def halah():
     print(alone.barbel)
+    
